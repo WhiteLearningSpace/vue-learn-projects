@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { useScrollDirection } from '@/hooks/useScroll'
 import { ref } from 'vue'
 

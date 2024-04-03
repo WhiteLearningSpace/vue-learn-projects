@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import MovieCard from '@/components/MovieCard.vue'
 import { useMovieList } from '@/hooks/useMovie'
-import { useScrollBottom, useScrollDirection } from '@/hooks/useScroll'
+import { useScrollBottom } from '@/hooks/useScroll'
 import { ref } from 'vue'
 import ToTop from '@/components/ToTop.vue'
 
@@ -16,7 +16,6 @@ useScrollBottom(async () => {
   await loadMore()
   isLoading.value = false
 })
-
 </script>
 
 <template>
@@ -33,7 +32,6 @@ main {
   margin: 0 auto;
   max-width: 600px;
 }
-
 
 .loading {
   text-align: center;

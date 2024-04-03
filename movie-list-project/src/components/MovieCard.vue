@@ -1,19 +1,29 @@
 <script lang="ts" setup>
 import type { Movie } from '@/hooks/useMovie'
 
-defineProps<{
-  movie: Movie
-}>()
+withDefaults(
+  defineProps<{
+    movie: Movie,
+    size: 'small' | 'large'
+  }>(),
+  {
+    size: 'large'
+  }
+)
+
+
 </script>
 
 <template>
-  <div class="card">
-    <img :src="movie.coverUrl" alt="cover" />
-    <div class="content">
-      <div>{{ movie.category }} / {{ movie.duration }}</div>
-      <h2>{{ movie.title }}</h2>
+  <router-link :to="`/movie/${movie.id}`">
+    <div class="card">
+      <img :src="movie.coverUrl" alt="cover" />
+      <div class="content">
+        <div>{{ movie.category }} / {{ movie.duration }}</div>
+        <div :class="size" class="title">{{ movie.title }}</div>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <style lang="scss" scoped>
@@ -27,7 +37,7 @@ img {
 .card {
   position: relative;
   max-height: 360px;
-  //height: 260px;
+  height: 100%;
 
   &::after {
     content: '';
@@ -46,8 +56,17 @@ img {
     color: white;
     padding: 10px;
 
-    h2 {
-      margin: 0.2em 0;
+    .title {
+      &.small {
+        font-size: 1em;
+        margin: 0.2em 0;
+      }
+
+      &.large {
+        font-size: 1.5em;
+        margin: 0.6em 0;
+        font-weight: bold;
+      }
     }
   }
 }
