@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 import { RouterLink } from 'vue-router'
 </script>
 
@@ -25,16 +24,16 @@ nav {
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  background-color: #6b6b6b;
+  background-color: #2eb1ff;
   font-size: 32px;
   color: black;
 }
 
 nav a {
-  color: #e0e0e0;
+  color: #5d5d5d;
 }
 
 nav a.router-link-active {
-  color: white;
+  color: black;
 }
 </style>
