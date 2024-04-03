@@ -11,7 +11,6 @@ if (movie.value == null) {
   router.back()
 }
 const { movies } = useMovieList()
-
 </script>
 
 <template>
@@ -37,19 +36,30 @@ const { movies } = useMovieList()
       <!--   推荐   -->
       <h2 class="recommend-title">推荐视频1</h2>
       <div class="movie-list">
-        <movie-card v-for="movie in movies" :key="movie.id" :movie="movie" class="movie-card" size="small" />
+        <movie-card
+          v-for="movie in movies"
+          :key="movie.id"
+          :movie="movie"
+          class="movie-card"
+          size="small"
+        />
       </div>
       <h2 class="recommend-title">推荐视频2</h2>
       <div class="movie-list">
-        <movie-card v-for="movie in movies.slice().reverse()" :key="movie.id" :movie="movie" class="movie-card"
-                    size="small" />
+        <movie-card
+          v-for="movie in movies.slice().reverse()"
+          :key="movie.id"
+          :movie="movie"
+          class="movie-card"
+          size="small"
+        />
       </div>
 
       <!--   工具栏   -->
       <div class="tool-bar">
         <div class="comment-box">
           <i class="iconfont icon-edit" />
-          <input placeholder="请输入评论" type="text">
+          <input placeholder="请输入评论" type="text" />
         </div>
         <i class="iconfont icon-aixin-xian" />
         <i class="iconfont icon-share" />

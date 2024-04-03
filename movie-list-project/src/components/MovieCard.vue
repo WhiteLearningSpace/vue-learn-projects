@@ -3,15 +3,13 @@ import type { Movie } from '@/hooks/useMovie'
 
 withDefaults(
   defineProps<{
-    movie: Movie,
+    movie: Movie
     size: 'small' | 'large'
   }>(),
   {
     size: 'large'
   }
 )
-
-
 </script>
 
 <template>
