@@ -16,6 +16,7 @@ const handleSubmit = () => {
     alert('请输入用户名和密码')
     return
   }
+  localStorage.setItem('CACE33A8-418F-402D-D3EB-4087F2BF8E1CUsername', username.value)
   name.value = username.value
 }
 
@@ -32,6 +33,7 @@ const changeName = () => {
     alert('不能为空')
     return
   }
+  localStorage.setItem('CACE33A8-418F-402D-D3EB-4087F2BF8E1CUsername', newName)
   name.value = newName
 }
 </script>

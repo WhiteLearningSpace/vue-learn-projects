@@ -41,7 +41,8 @@ const { movies } = useMovieList()
       </div>
       <h2 class="recommend-title">推荐视频2</h2>
       <div class="movie-list">
-        <movie-card v-for="movie in movies.reverse()" :key="movie.id" :movie="movie" class="movie-card" size="small" />
+        <movie-card v-for="movie in movies.slice().reverse()" :key="movie.id" :movie="movie" class="movie-card"
+                    size="small" />
       </div>
 
       <!--   工具栏   -->

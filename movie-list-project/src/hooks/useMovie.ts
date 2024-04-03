@@ -12,13 +12,13 @@ export interface Movie {
 
 export const useMovie = (id: number) => {
   const movie = ref<Movie | null>(null)
-  const { categories } = useCategoryImages()
+  const { movies } = useMovieList()
   movie.value = {
     id: id,
-    title: moviesData[id].title,
-    coverUrl: categories.value[id].imgUrl,
-    category: categories.value[id].name,
-    duration: moviesData[id].duration,
+    title: movies.value[id].title,
+    coverUrl: movies.value[id].coverUrl,
+    category: movies.value[id].category,
+    duration: movies.value[id].duration,
     videoUrl: videoUrl
   }
   return { movie }

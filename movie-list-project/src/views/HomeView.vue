@@ -20,7 +20,7 @@ useScrollBottom(async () => {
 
 <template>
   <main>
-    <movie-card v-for="movie in movies" :key="movie.id" :movie="movie" />
+    <movie-card v-for="movie in movies" :key="movie.id" :movie="movie" size="large" />
     <div v-show="isLoading" class="loading">加载中</div>
 
     <to-top />
