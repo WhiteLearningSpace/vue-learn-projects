@@ -1,47 +1,44 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script lang="ts" setup>
+import TodoAdd from './components/TodoAdd.vue'
+import TodoFilter from './components/TodoFilter.vue'
+import TodoList from './components/TodoList.vue'
+import { useTodo } from './hooks/useTodo'
+
+const {
+  addTodo,
+  removeTodo,
+  toggleTodo,
+  editTodo,
+  removeAll,
+  removeAllFiltered,
+  stateFilter,
+  filteredTodos
+} = useTodo()
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
+    <h1><a href="" target="_blank">gitee仓库</a></h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <h1>TODOLIST</h1>
+    <todo-add @add-todo="addTodo" />
+    <todo-filter
+      v-model="stateFilter"
+      @remove-all="removeAll"
+      @remove-all-filtered="removeAllFiltered"
+    />
+    <todo-list
+      :edit-todo="editTodo"
+      :remove-todo="removeTodo"
+      :todos="filteredTodos"
+      :toggle-todo="toggleTodo"
+    />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+div {
+  max-width: 800px;
+  margin: 0 auto;
 }
 </style>
