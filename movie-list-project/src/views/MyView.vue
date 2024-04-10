@@ -40,6 +40,13 @@ const changeName = () => {
 
 <template>
   <div class="container">
+    <h2>
+      <a
+        target="_blank"
+        href="https://gitee.com/linw-gite/vue-learn-projects/tree/main/movie-list-project">
+        Gitee仓库
+      </a>
+    </h2>
     <template v-if="name">
       <!--   登录后的组件   -->
       <img alt="avatar" src="@/assets/images/avatar.jpg" />
