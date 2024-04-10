@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Todo } from '../hooks/useTodo'
+import { type Todo } from '@/hooks/useTodo'
 import TodoItem from './TodoItem.vue'
 
 const { todos } = defineProps<{

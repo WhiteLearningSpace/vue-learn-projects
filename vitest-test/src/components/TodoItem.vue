@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Todo } from '../hooks/useTodo.ts'
+import { type Todo } from '@/hooks/useTodo'
 import { nextTick, ref, watch } from 'vue'
 
 const { todo } = defineProps<{

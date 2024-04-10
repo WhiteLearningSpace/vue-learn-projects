@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { mount } from '@vue/test-utils'
-import TodoAdd from '@/components/TodoAdd.vue'
+import TodoAdd from '../src/components/TodoAdd.vue'
 
 describe('测试TodoAdd组件', () => {
   test('测试添加新的todo', async () => {
@@ -30,6 +30,4 @@ describe('测试TodoAdd组件', () => {
     // 检查是否触发了 addTodo 事件
     expect(component.emitted()).not.toHaveProperty('addTodo')
   })
-
-
 })

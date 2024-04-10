@@ -14,7 +14,7 @@ export function useTodo() {
   // 事项状态过滤器
   const stateFilter = ref<StateFilter>('all')
   // 是否生成模拟数据
-  const isToGenerateMockData = true
+  const isToGenerateMockData = false
 
   /**
    * 添加事项
