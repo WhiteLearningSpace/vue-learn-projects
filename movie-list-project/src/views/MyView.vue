@@ -43,7 +43,8 @@ const changeName = () => {
     <h2>
       <a
         target="_blank"
-        href="https://gitee.com/linw-gite/vue-learn-projects/tree/main/movie-list-project">
+        href="https://gitee.com/linw-gite/vue-learn-projects/tree/main/movie-list-project"
+      >
         Gitee仓库
       </a>
     </h2>
