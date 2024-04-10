@@ -5,3 +5,4 @@
 - [vue-router-test](./vue-router-test)
 - [movie-list-project](./movie-list-project)
 - [vitest-test](./vitest-test)
+- [vue-pinia-test](./vue-pinia-test)
