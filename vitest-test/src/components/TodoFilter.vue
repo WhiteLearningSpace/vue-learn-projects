@@ -28,7 +28,7 @@ const emits = defineEmits<{
 
     <div>
       <button class="remove-all-btn" @click="emits('removeAllFiltered')">清空当前列表</button>
-      <button class="remove-all-btn" @click="emits('removeAll')">清空列表</button>
+      <button class="remove-all-btn all" @click="emits('removeAll')">清空列表</button>
     </div>
   </div>
 </template>

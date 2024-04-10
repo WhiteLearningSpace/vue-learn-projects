@@ -47,13 +47,13 @@ watch(text, (newVal) => {
       ></textarea>
     </label>
     <div class="button-bar">
-      <button v-show="isEditing" style="background-color: limegreen" @click="isEditing = false">
+      <button v-show="isEditing" class="edit-done-btn" style="background-color: limegreen" @click="isEditing = false">
         完成
       </button>
-      <button v-show="!isEditing" style="background-color: cornflowerblue" @click="onHandleEdit">
+      <button v-show="!isEditing" class="edit-btn" style="background-color: cornflowerblue" @click="onHandleEdit">
         编辑
       </button>
-      <button @click="emits('removeTodo', todo.id)">删除</button>
+      <button class="remove-btn" @click="emits('removeTodo', todo.id)">删除</button>
     </div>
   </div>
 </template>
