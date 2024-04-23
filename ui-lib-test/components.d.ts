@@ -7,8 +7,28 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CourseGrade: typeof import('./src/components/CourseGrade.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    VanButton: typeof import('vant/es')['Button']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElInput: typeof import('element-plus/es')['ElInput']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElSubMenu: (typeof import('element-plus/es'))['ElSubMenu']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
+    MyTodo: typeof import('./src/components/TodoList/MyTodo.vue')['default']
+    PersonalScore: typeof import('./src/components/PersonalScore.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    Todo: (typeof import('./src/components/TodoList/Todo.vue'))['default']
+    TodoAdd: typeof import('./src/components/TodoList/TodoAdd.vue')['default']
+    TodoFilter: typeof import('./src/components/TodoList/TodoFilter.vue')['default']
+    TodoList: typeof import('./src/components/TodoList/TodoList.vue')['default']
+    TodoList1: (typeof import('./src/components/TodoList/TodoList1.vue'))['default']
+    VanButton: (typeof import('vant/es'))['Button']
+    VHeader: typeof import('./src/components/VHeader.vue')['default']
   }
 }
