@@ -2,6 +2,7 @@
 import { useTodo } from '@/hooks/useTodo'
 import TodoAdd from '@/components/TodoList/TodoAdd.vue'
 import TodoList from '@/components/TodoList/TodoList.vue'
+import TodoFilter from '@/components/TodoList/TodoFilter.vue'
 
 const {
   todos,
@@ -21,6 +22,12 @@ const {
     <el-card class="flex flex-col items-center max-w-[640px] w-full m-4">
       <template #header>
         <TodoAdd @addTodo="addTodo" />
+        <TodoFilter
+          :todoLength="todos.length"
+          v-model="stateFilter"
+          @removeAll="removeAll"
+          @removeAllFiltered="removeAllFiltered"
+        />
       </template>
       <TodoList
         :todos="filteredTodos"
@@ -33,6 +40,12 @@ const {
 </template>
 
 <style scoped>
+:deep(.el-card__header) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 :deep(.el-card__body) {
   width: 100%;
 }

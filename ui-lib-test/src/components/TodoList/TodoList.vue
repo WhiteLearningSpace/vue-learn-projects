@@ -10,6 +10,14 @@ const emits = defineEmits<{
   toggleTodo: [id: number]
   editTodo: [id: number, text: string]
 }>()
+
+const handleEdit = (id: number) => {
+  const p = prompt(`修改${id}的内容`)
+  if (p == null) return
+  const str = p.trim()
+  if (!str) return
+  emits('editTodo', id, str)
+}
 </script>
 
 <template>
@@ -32,8 +40,8 @@ const emits = defineEmits<{
             >
               {{ scope.row.isCompleted ? '已完成' : '未完成' }}
             </el-button>
-            <el-button type="primary">修改</el-button>
-            <el-button type="danger">删除</el-button>
+            <el-button type="primary" @click="handleEdit(scope.row.id)">修改</el-button>
+            <el-button type="danger" @click="emits('removeTodo', scope.row.id)">删除</el-button>
           </div>
         </template>
       </el-table-column>

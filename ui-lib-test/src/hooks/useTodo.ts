@@ -6,7 +6,7 @@ export interface Todo {
   isCompleted: boolean
 }
 
-type StateFilter = 'all' | 'completed' | 'incomplete'
+export type StateFilter = 'all' | 'completed' | 'incomplete'
 
 export function useTodo() {
   // 事项列表
@@ -34,6 +34,8 @@ export function useTodo() {
    * @param id 事项id
    */
   const removeTodo = (id: number) => {
+    const b = confirm('是否确认删除')
+    if (!b) return
     todos.value = todos.value.filter((todo) => todo.id !== id)
     saveTodos()
   }
