@@ -22,7 +22,7 @@ const option2 = [
 
 const activeNames = ref([])
 
-interface Data {
+export interface Data {
   id: number
   taskName: string
   score: number | undefined
