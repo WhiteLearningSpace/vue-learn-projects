@@ -9,6 +9,16 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: MyTodo
+    },
+    {
+      name: 'course-grade',
+      path: '/course-grade',
+      component: () => import('@/components/CourseGrade.vue')
+    },
+    {
+      path: '/personal-score',
+      name: 'personal-score',
+      component: () => import('@/components/PersonalScore.vue')
     }
   ]
 })
