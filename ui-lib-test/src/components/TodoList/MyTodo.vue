@@ -76,6 +76,7 @@ const handleChange = (value: string) => {
         <van-dropdown-item v-model="stateFilter" :options="filterOptions" />
         <van-dropdown-item :options="operationOption" title="操作" @change="handleChange" />
       </van-dropdown-menu>
+      <van-empty v-if="filteredTodos.length == 0" description="暂无数据" image="error" />
       <van-collapse v-model="activeName" accordion>
         <van-collapse-item
           v-for="item in filteredTodos"
