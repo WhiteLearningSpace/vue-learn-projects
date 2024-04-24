@@ -40,7 +40,6 @@ declare module 'vue' {
     VanSearch: typeof import('vant/es')['Search']
     VanSpace: typeof import('vant/es')['Space']
     VanSwitch: typeof import('vant/es')['Switch']
-    VanTable: typeof import('vant/es')['Table']
     VHeader: typeof import('./src/components/VHeader.vue')['default']
   }
 }
