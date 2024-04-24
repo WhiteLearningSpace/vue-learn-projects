@@ -33,6 +33,8 @@ declare module 'vue' {
     VanCellGroup: typeof import('vant/es')['CellGroup']
     VanCollapse: typeof import('vant/es')['Collapse']
     VanCollapseItem: typeof import('vant/es')['CollapseItem']
+    VanDropdownItem: typeof import('vant/es')['DropdownItem']
+    VanDropdownMenu: typeof import('vant/es')['DropdownMenu']
     VanSpace: typeof import('vant/es')['Space']
     VanTable: typeof import('vant/es')['Table']
     VHeader: typeof import('./src/components/VHeader.vue')['default']

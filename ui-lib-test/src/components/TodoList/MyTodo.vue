@@ -32,6 +32,24 @@ const handleEdit = (id: number) => {
   if (!str) return
   editTodo(id, str)
 }
+
+const filterOptions = [
+  { value: 'all', text: '全部' },
+  { value: 'completed', text: '完成' },
+  { value: 'incomplete', text: '未完成' }
+]
+const operationOption = [
+  { value: 'removeAll', text: '删除全部' },
+  { value: 'removeAllFiltered', text: '删除当前列表' }
+]
+const handleChange = (value: string) => {
+  console.log(value)
+  if (value === 'removeAll') {
+    removeAll()
+  } else if (value === 'removeAllFiltered') {
+    removeAllFiltered()
+  }
+}
 </script>
 
 <template>
@@ -40,8 +58,8 @@ const handleEdit = (id: number) => {
       <template #header>
         <TodoAdd @addTodo="addTodo" />
         <TodoFilter
-          :todoLength="todos.length"
           v-model="stateFilter"
+          :todoLength="todos.length"
           @removeAll="removeAll"
           @removeAllFiltered="removeAllFiltered"
         />
@@ -54,27 +72,31 @@ const handleEdit = (id: number) => {
       />
     </el-card>
     <div v-else class="w-full my-2">
+      <van-dropdown-menu>
+        <van-dropdown-item v-model="stateFilter" :options="filterOptions" />
+        <van-dropdown-item :options="operationOption" title="操作" @change="handleChange" />
+      </van-dropdown-menu>
       <van-collapse v-model="activeName" accordion>
         <van-collapse-item
           v-for="item in filteredTodos"
           :key="item.id"
+          :name="item.id"
           :title="item.text"
           :title-class="item.isCompleted ? 'text-green-600 font-bold line-through' : ''"
-          :name="item.id"
         >
           <van-space class="flex w-full justify-around">
             <van-button
-              class="w-[80px]"
               :type="item.isCompleted ? 'success' : 'primary'"
+              class="w-[80px]"
               size="small"
               @click="toggleTodo(item.id)"
             >
               {{ item.isCompleted ? '已完成' : '未完成' }}
             </van-button>
-            <van-button class="w-[80px]" type="primary" size="small" @click="handleEdit(item.id)">
+            <van-button class="w-[80px]" size="small" type="primary" @click="handleEdit(item.id)">
               修改
             </van-button>
-            <van-button class="w-[80px]" type="danger" size="small" @click="removeTodo(item.id)">
+            <van-button class="w-[80px]" size="small" type="danger" @click="removeTodo(item.id)">
               删除
             </van-button>
           </van-space>
