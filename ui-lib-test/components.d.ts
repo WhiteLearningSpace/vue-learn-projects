@@ -28,6 +28,13 @@ declare module 'vue' {
     TodoAdd: typeof import('./src/components/TodoList/TodoAdd.vue')['default']
     TodoFilter: typeof import('./src/components/TodoList/TodoFilter.vue')['default']
     TodoList: typeof import('./src/components/TodoList/TodoList.vue')['default']
+    VanButton: typeof import('vant/es')['Button']
+    VanCell: typeof import('vant/es')['Cell']
+    VanCellGroup: typeof import('vant/es')['CellGroup']
+    VanCollapse: typeof import('vant/es')['Collapse']
+    VanCollapseItem: typeof import('vant/es')['CollapseItem']
+    VanSpace: typeof import('vant/es')['Space']
+    VanTable: typeof import('vant/es')['Table']
     VHeader: typeof import('./src/components/VHeader.vue')['default']
   }
 }
